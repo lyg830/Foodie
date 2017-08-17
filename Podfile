@@ -8,6 +8,7 @@ target 'Foodie' do
   pod 'Moya'
   pod 'Kingfisher', '~> 3.0'
   pod 'KeychainAccess'
+  pod 'SwiftyJSON'
 
   target 'FoodieTests' do
     inherit! :search_paths

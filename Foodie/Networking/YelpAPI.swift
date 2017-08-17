@@ -14,7 +14,7 @@ typealias MoyaResult = Result<Moya.Response, MoyaError>
 let baseYelpUrlString = "https://api.yelp.com"
 
 public enum YelpTarget {
-    case search(String, Int)
+    case search(String?, String, Int)
 }
 
 extension YelpTarget: TargetType {
@@ -22,7 +22,9 @@ extension YelpTarget: TargetType {
     
     public var path: String {
         switch self {
-        case let .search(location, limit):
+        case let .search(term?, location, limit):
+            return "/v3/businesses/search?term=\(term.urlEscaped)&location=\(location.urlEscaped)&limit=\(limit)"
+        case let .search(_, location, limit):
             return "/v3/businesses/search?location=\(location.urlEscaped)&limit=\(limit)"
         }
     }

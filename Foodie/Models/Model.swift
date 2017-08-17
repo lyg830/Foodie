@@ -7,7 +7,8 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 protocol Model {
-    static func fromJSON(_ json: Any) -> Self?
+    static func fromJSON(_ json: JSON) -> Self?
 }

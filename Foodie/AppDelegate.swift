@@ -14,9 +14,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        let navigationBarAppearnce = UINavigationBar.appearance()
+        navigationBarAppearnce.isTranslucent = false
+        navigationBarAppearnce.barTintColor = UIColor.appTintColor()
+        navigationBarAppearnce.tintColor = UIColor.white
+        navigationBarAppearnce.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
 
+        let splitView = SplitViewController()
+        let favView = UIStoryboard.init(name: "Favorites", bundle: Bundle.main).instantiateViewController(withIdentifier: "FavoritesTableViewController")
+        let searchView = UIStoryboard.init(name: "Search", bundle: Bundle.main).instantiateViewController(withIdentifier: "SearchViewController")
+        splitView.viewControllers = [UINavigationController(rootViewController: favView), UINavigationController(rootViewController: searchView)]
+        
+        let frame = UIScreen.main.bounds
+        window = UIWindow(frame: frame)
+        self.window?.rootViewController = splitView
+        self.window?.makeKeyAndVisible()
+        
         return true
     }
 

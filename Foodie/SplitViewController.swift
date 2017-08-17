@@ -13,8 +13,6 @@ class SplitViewController: UISplitViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,11 +36,14 @@ class SplitViewController: UISplitViewController {
 extension SplitViewController: UISplitViewControllerDelegate {
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController:UIViewController, onto primaryViewController:UIViewController) -> Bool {
         guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
-        guard let topAsDetailController = secondaryAsNavController.topViewController as? DetailViewController else { return false }
-        if topAsDetailController.detailItem == nil {
-            // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
+        
+        if let topAsSearchViewController = secondaryAsNavController.topViewController as? SearchViewController,
+            topAsSearchViewController.businesses.count > 0 {
             return true
+        } else if let topAsDetailViewController = secondaryAsNavController.topViewController as? BusinessDetailViewController {
+            return false
         }
+        
         return false
     }
 }
