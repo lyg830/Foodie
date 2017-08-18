@@ -38,6 +38,8 @@ extension BusinessDetailViewController: UITableViewDataSource {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "businessDetailInfoCell", for: indexPath) as! BusinessDetailInfoTableViewCell
             cell.textLabel?.text = self.business?.name
+            cell.accessoryView = self.isFavorite ? nil : cell.favoriteBtn
+            cell.delegate = self
             
             if let location = self.business?.location {
                 let addrArr:[String] = [location.address1, location.city, location.state, location.zipCode, location.country].flatMap{$0}
@@ -110,14 +112,16 @@ extension BusinessDetailViewController: UITableViewDelegate {
             let scale = (offset/self.topImgViewHeight) + 1
             let translation = CGAffineTransform(translationX: 0, y: offset/2)
             self.imgView.transform = translation.scaledBy(x: scale, y: scale)
-            
+            self.imgView.alpha = 1
         } else {
-            var offset = -scrollView.contentOffset.y
-            if offset <= navAndStatusHeight {
-                offset = navAndStatusHeight
-            }
+            let offset = -scrollView.contentOffset.y
+        
+            let translationY = (self.topImgViewHeight-offset)/2
+            let alpha = (self.topImgViewHeight - translationY)/self.topImgViewHeight
             
-            self.imgView.transform = CGAffineTransform(translationX: 0, y: -(self.imgView.frame.height-offset))
+            print("alpha: \(alpha)")
+            self.imgView.transform = CGAffineTransform(translationX: 0, y: -translationY)
+            self.imgView.alpha = alpha
         }
     }
 }
@@ -134,5 +138,47 @@ extension BusinessDetailViewController: UITableViewDataSourcePrefetching {
         
         let prefetcher = ImagePrefetcher(urls: urls, options: [KingfisherOptionsInfoItem.cacheMemoryOnly])
         prefetcher.start()
+    }
+}
+
+extension BusinessDetailViewController: BusinessDetailInfoCellDelegate {
+    func onAddToFavoritesClick() {
+        
+        guard let business = self.business,
+            let id = business.id,
+            !DatabaseManager.shared.favoriteBusinessExists(with: id),
+            let favoriteBusiness = DatabaseManager.shared.newEntity(with: ManagedFavoriteBusiness.self) as? ManagedFavoriteBusiness else {
+            return
+        }
+        
+        favoriteBusiness.id = id
+        favoriteBusiness.imageUrl = business.imageUrl
+        favoriteBusiness.name = business.name
+        favoriteBusiness.rating = business.rating as NSNumber?
+        
+        if let location = business.location,
+            let managedLocation = DatabaseManager.shared.newEntity(with: ManagedLocation.self) as? ManagedLocation {
+            managedLocation.address1 = location.address1
+            managedLocation.address2 = location.address2
+            managedLocation.address3 = location.address3
+            managedLocation.city = location.city
+            managedLocation.state = location.state
+            managedLocation.country = location.country
+            managedLocation.zipCode = location.zipCode
+            favoriteBusiness.location = managedLocation
+        }
+        
+        if let coordinates = business.coordinates,
+            let managedCoordinates = DatabaseManager.shared.newEntity(with: ManagedCoordinates.self) as? ManagedCoordinates {
+            managedCoordinates.latitude = coordinates.latitude
+            managedCoordinates.longitude = coordinates.longitude
+            favoriteBusiness.coordinates = managedCoordinates
+        }
+        
+        DatabaseManager.shared.saveContext()
+        self.isFavorite = true
+        self.tableView.reloadData()
+        let name = business.name ?? "this business"
+        self.showAlertController("Done", message: "Successfully added \(name) to your favorites.")
     }
 }

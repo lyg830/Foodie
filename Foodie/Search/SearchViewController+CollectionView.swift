@@ -13,7 +13,7 @@ extension SearchViewController: UICollectionViewDataSource {
     
     var sectionInsets: UIEdgeInsets {
         get {
-            if case (UIUserInterfaceSizeClass.compact, _) = self.sizeClass() {
+            if self.splitViewController?.isCollapsed ?? true {
                 return UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
             } else {
                 return UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30)
@@ -24,7 +24,7 @@ extension SearchViewController: UICollectionViewDataSource {
     
     var minimumLineSpacing: CGFloat {
         get {
-            if case (UIUserInterfaceSizeClass.compact, _) = self.sizeClass() {
+            if self.splitViewController?.isCollapsed ?? true {
                 return 15.0
             } else {
                 return 20.0
@@ -35,7 +35,7 @@ extension SearchViewController: UICollectionViewDataSource {
     
     var minimumInteritemSpacing: CGFloat {
         get {
-            if case (UIUserInterfaceSizeClass.compact, _) = self.sizeClass() {
+            if self.splitViewController?.isCollapsed ?? true {
                 return 15.0
             } else {
                 return 20.0
@@ -82,7 +82,7 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         var width: CGFloat
-        if case (UIUserInterfaceSizeClass.compact, _) = self.sizeClass() {
+        if self.splitViewController?.isCollapsed ?? true {
             width = (self.collectionView.frame.width - (sectionInsets.left + sectionInsets.right)  - minimumInteritemSpacing)/2.0
         } else {
             width = 200.0
@@ -106,7 +106,7 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         
-        guard let detailVC = UIStoryboard.init(name: "BusinessDetail", bundle: Bundle.main).instantiateViewController(withIdentifier: "BusinessDetailViewController") as? BusinessDetailViewController,
+        guard let detailVC = StoryboardProvider.viewController(from: "BusinessDetail", classType: BusinessDetailViewController.self) as? BusinessDetailViewController,
             self.businesses.count > indexPath.row else {
                 return
         }

@@ -7,24 +7,20 @@
 //
 
 import UIKit
+import CoreData
 
 private let reuseIdentifier = "Cell"
 
 class FavoritesTableViewController: UITableViewController {
     
-    var searchViewController: SearchViewController? = nil
     var sortBtn: UIButton!
-    var businesses = [Business]()
+    var businesses = [ManagedFavoriteBusiness]()
+    var favoritesFetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
     
     func configureView() {
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        
-        if let split = self.splitViewController {
-            let controllers = split.viewControllers
-            self.searchViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? SearchViewController
-        }
         
         self.sortBtn = UIButton(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: 25, height: 25)))
         self.sortBtn.setImage(UIImage(named: "sort_ascending")?.withRenderingMode(.alwaysTemplate), for: .selected)
@@ -44,6 +40,7 @@ class FavoritesTableViewController: UITableViewController {
         super.viewDidLoad()
         
         self.configureView()
+        self.fetchAllFavorites(sortAscending: self.sortBtn.isSelected)
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,35 +49,25 @@ class FavoritesTableViewController: UITableViewController {
     }
     
     func didClickSearchItem() {
-        guard let searchView = self.searchViewController else {
-            return
-        }
-        
+        let searchView = StoryboardProvider.viewController(from: "Search", classType: SearchViewController.self)
         self.showDetailViewController(searchView, sender: self)
     }
     
     func didClickSortBtn() {
         self.sortBtn.isSelected = !self.sortBtn.isSelected
-        self.businesses = self.businesses.sorted(by: { (b1, b2) -> Bool in
-            let result = b1.name ?? "" < b2.name ?? ""
-            return self.sortBtn.isSelected ? result : !result
-        })
-        self.tableView.reloadData()
+        self.fetchAllFavorites(sortAscending: self.sortBtn.isSelected)
+    }
+
+    func updateTableViewBackground() {
+        if let count = self.favoritesFetchedResultsController?.fetchedObjects?.count,
+            count > 0 {
+            self.tableView.backgroundView = nil
+            self.tableView.separatorStyle = .singleLine
+        } else {
+            self.tableView.separatorStyle = .none
+            self.tableView.backgroundView = EmptyTablePlaceholderView.placeHolderView(with: "There are currently no favorites. Please search for a business and then add it to the favorite list.")
+        }
     }
 }
 
-extension FavoritesTableViewController {
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
-    }
-}
 
-extension FavoritesTableViewController {
-    
-    
-}

@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Event" representedClassName="Event" codeGenerationType="class">
-        <attribute name="timestamp" optional="YES" attributeType="Date"/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16A323" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ManagedCoordinates" representedClassName="ManagedCoordinates" syncable="YES">
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="business" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ManagedFavoriteBusiness" inverseName="coordinates" inverseEntity="ManagedFavoriteBusiness" syncable="YES"/>
+    </entity>
+    <entity name="ManagedFavoriteBusiness" representedClassName="ManagedFavoriteBusiness" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="rating" optional="YES" attributeType="Float" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="coordinates" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ManagedCoordinates" inverseName="business" inverseEntity="ManagedCoordinates" syncable="YES"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ManagedLocation" inverseName="business" inverseEntity="ManagedLocation" syncable="YES"/>
+    </entity>
+    <entity name="ManagedLocation" representedClassName="ManagedLocation" syncable="YES">
+        <attribute name="address1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="address2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="address3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="zipCode" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="business" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ManagedFavoriteBusiness" inverseName="location" inverseEntity="ManagedFavoriteBusiness" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="261" positionY="189" width="128" height="60"/>
+        <element name="ManagedCoordinates" positionX="-36" positionY="72" width="128" height="90"/>
+        <element name="ManagedFavoriteBusiness" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="ManagedLocation" positionX="-54" positionY="18" width="128" height="165"/>
     </elements>
 </model>

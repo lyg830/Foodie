@@ -13,6 +13,11 @@ class SplitViewController: UISplitViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
+        
+        if case (UIUserInterfaceSizeClass.regular, _) = self.sizeClass() {
+            let searchView = StoryboardProvider.viewController(from: "Search", classType: SearchViewController.self)
+            self.showDetailViewController(UINavigationController(rootViewController: searchView), sender: self)
+        }
     }
 
     override func didReceiveMemoryWarning() {

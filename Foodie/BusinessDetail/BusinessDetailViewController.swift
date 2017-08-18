@@ -17,10 +17,14 @@ class BusinessDetailViewController: UIViewController {
     var business: Business?
     var topImgViewHeight: CGFloat!
     var reviews = [Review]()
+    var image: UIImage?
+    var isFavorite: Bool = false
     
     func configureView() {
         if let url = self.business?.imageUrl {
-            self.imgView.kf.setImage(with: URL(string: url), options: [KingfisherOptionsInfoItem.cacheMemoryOnly, KingfisherOptionsInfoItem.transition(ImageTransition.fade(0.2))])
+            self.imgView.kf.setImage(with: URL(string: url), options: [KingfisherOptionsInfoItem.cacheMemoryOnly, KingfisherOptionsInfoItem.transition(ImageTransition.fade(0.2))], completionHandler: { (image, error, cacheType, url) in
+                self.image = image
+            })
         }
         
         self.tableView.dataSource = self
@@ -49,6 +53,8 @@ class BusinessDetailViewController: UIViewController {
             // error handling 
             return
         }
+        
+        self.isFavorite = DatabaseManager.shared.favoriteBusinessExists(with: id)
         
         YelpService.shared.getReviews(businessId: id) { (reviews, error) in
             if let error = error, case .statusCode(_) = error {

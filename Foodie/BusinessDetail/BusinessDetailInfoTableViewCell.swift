@@ -8,18 +8,24 @@
 
 import UIKit
 
-class BusinessDetailInfoTableViewCell: UITableViewCell {
+protocol BusinessDetailInfoCellDelegate {
+    func onAddToFavoritesClick()
+}
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-        
+class BusinessDetailInfoTableViewCell: UITableViewCell {
+    
+    var delegate: BusinessDetailInfoCellDelegate?
+    lazy var favoriteBtn: UIButton = {
         let button = UIButton(type: .roundedRect)
         button.frame = CGRect(x: 0, y: 0, width: 80, height: 40)
         button.setTitle("Favorites", for: .normal)
         button.addTarget(self, action: #selector(addToFavorites), for: .touchUpInside)
-        
-        self.accessoryView = button
+        return button
+    }()
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -29,7 +35,7 @@ class BusinessDetailInfoTableViewCell: UITableViewCell {
     }
     
     func addToFavorites() {
-        
+        self.delegate?.onAddToFavoritesClick()
     }
 
 }

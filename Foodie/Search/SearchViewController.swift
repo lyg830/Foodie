@@ -28,7 +28,7 @@ class SearchViewController: UIViewController {
         self.sortBtn.addTarget(self, action: #selector(didClickSortBtn), for: .touchUpInside)
         self.sortBtn.isSelected = true
         
-        if case (UIUserInterfaceSizeClass.compact, _) = self.sizeClass() {
+        if self.splitViewController?.isCollapsed ?? true {
             self.searchBar.barTintColor = UIColor.appTintColor()
             self.locationSearchBar.barTintColor = UIColor.appTintColor()
             self.searchBar.backgroundImage = UIImage()

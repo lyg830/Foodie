@@ -9,35 +9,47 @@
 /* Begin PBXBuildFile section */
 		0CAD6550DF5FECB780E37229 /* Pods_FoodieUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5645D7D757FD4132EC4047 /* Pods_FoodieUITests.framework */; };
 		3437866F145B6B0745FDE7EE /* Pods_FoodieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F51D490D82DB0C65C4D8BABA /* Pods_FoodieTests.framework */; };
+		520B529B1F476B13009078AA /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B529A1F476B13009078AA /* DatabaseManager.swift */; };
+		520E8E1C1F473D06007C4DD2 /* BusinessDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 520E8E171F473D06007C4DD2 /* BusinessDetail.storyboard */; };
+		520E8E1D1F473D06007C4DD2 /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 520E8E181F473D06007C4DD2 /* Favorites.storyboard */; };
+		520E8E1E1F473D06007C4DD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 520E8E191F473D06007C4DD2 /* LaunchScreen.storyboard */; };
+		520E8E1F1F473D06007C4DD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 520E8E1A1F473D06007C4DD2 /* Main.storyboard */; };
+		520E8E201F473D06007C4DD2 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 520E8E1B1F473D06007C4DD2 /* Search.storyboard */; };
+		520E8E221F473D1F007C4DD2 /* StoryboardProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520E8E211F473D1F007C4DD2 /* StoryboardProvider.swift */; };
 		52111FFB1F43C23E002A6EAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52111FFA1F43C23E002A6EAD /* AppDelegate.swift */; };
 		52111FFE1F43C23E002A6EAD /* Foodie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52111FFC1F43C23E002A6EAD /* Foodie.xcdatamodeld */; };
-		521120051F43C23E002A6EAD /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521120031F43C23E002A6EAD /* Favorites.storyboard */; };
 		521120071F43C23E002A6EAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 521120061F43C23E002A6EAD /* Assets.xcassets */; };
-		5211200A1F43C23E002A6EAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521120081F43C23E002A6EAD /* LaunchScreen.storyboard */; };
 		521120151F43C23F002A6EAD /* FoodieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521120141F43C23F002A6EAD /* FoodieTests.swift */; };
 		521120201F43C23F002A6EAD /* FoodieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211201F1F43C23F002A6EAD /* FoodieUITests.swift */; };
 		521120311F43C6BC002A6EAD /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521120301F43C6BC002A6EAD /* SplitViewController.swift */; };
 		521120341F43CD6C002A6EAD /* YelpAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521120331F43CD6C002A6EAD /* YelpAPI.swift */; };
 		5211203E1F440490002A6EAD /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211203D1F440490002A6EAD /* Model.swift */; };
-		521120421F452482002A6EAD /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521120411F452482002A6EAD /* Search.storyboard */; };
 		521120471F454613002A6EAD /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521120461F454613002A6EAD /* FavoritesTableViewController.swift */; };
 		5211204A1F454656002A6EAD /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521120491F454656002A6EAD /* FavoritesTableViewCell.swift */; };
-		5211204C1F454C73002A6EAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5211204B1F454C73002A6EAD /* Main.storyboard */; };
 		521120511F454EDF002A6EAD /* YelpOAuth2Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211204F1F454EDF002A6EAD /* YelpOAuth2Handler.swift */; };
 		521120521F454EDF002A6EAD /* YelpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521120501F454EDF002A6EAD /* YelpService.swift */; };
 		521120541F454EEF002A6EAD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521120531F454EEF002A6EAD /* SearchViewController.swift */; };
-		521120581F455A50002A6EAD /* UIColor+Foodie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521120571F455A50002A6EAD /* UIColor+Foodie.swift */; };
-		5211205A1F45617A002A6EAD /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521120591F45617A002A6EAD /* UIViewController+Extension.swift */; };
 		5211205C1F46353A002A6EAD /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211205B1F46353A002A6EAD /* Business.swift */; };
 		5211205E1F4652D9002A6EAD /* BusinessDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211205D1F4652D9002A6EAD /* BusinessDetailViewController.swift */; };
 		521120631F466A59002A6EAD /* BusinessSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521120621F466A59002A6EAD /* BusinessSearchCollectionViewCell.swift */; };
 		521120651F466A7B002A6EAD /* SearchViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521120641F466A7B002A6EAD /* SearchViewController+CollectionView.swift */; };
 		521120671F466BCA002A6EAD /* SearchViewController+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521120661F466BCA002A6EAD /* SearchViewController+Search.swift */; };
-		521120691F46AA57002A6EAD /* BusinessDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521120681F46AA57002A6EAD /* BusinessDetail.storyboard */; };
 		5211206C1F46B316002A6EAD /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211206B1F46B316002A6EAD /* Review.swift */; };
 		521120721F46CAB9002A6EAD /* BusinessDetailViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521120711F46CAB9002A6EAD /* BusinessDetailViewController+TableView.swift */; };
 		521120771F46D8FF002A6EAD /* BusinessDetailInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521120761F46D8FF002A6EAD /* BusinessDetailInfoTableViewCell.swift */; };
 		521120791F46DE05002A6EAD /* BusinessDetailReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521120781F46DE05002A6EAD /* BusinessDetailReviewTableViewCell.swift */; };
+		525647B01F47816C002A9DAA /* ManagedFavoriteBusiness+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525647AA1F47816C002A9DAA /* ManagedFavoriteBusiness+CoreDataClass.swift */; };
+		525647B11F47816C002A9DAA /* ManagedFavoriteBusiness+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525647AB1F47816C002A9DAA /* ManagedFavoriteBusiness+CoreDataProperties.swift */; };
+		525647B21F47816C002A9DAA /* ManagedCoordinates+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525647AC1F47816C002A9DAA /* ManagedCoordinates+CoreDataClass.swift */; };
+		525647B31F47816C002A9DAA /* ManagedCoordinates+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525647AD1F47816C002A9DAA /* ManagedCoordinates+CoreDataProperties.swift */; };
+		525647B41F47816C002A9DAA /* ManagedLocation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525647AE1F47816C002A9DAA /* ManagedLocation+CoreDataClass.swift */; };
+		525647B51F47816C002A9DAA /* ManagedLocation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525647AF1F47816C002A9DAA /* ManagedLocation+CoreDataProperties.swift */; };
+		52E041531F478DDB00EFC815 /* EmptyTablePlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E041521F478DDB00EFC815 /* EmptyTablePlaceholderView.swift */; };
+		52E041571F478E0F00EFC815 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E041551F478E0F00EFC815 /* UIViewController+Extension.swift */; };
+		52E041581F478E0F00EFC815 /* UIColor+Foodie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E041561F478E0F00EFC815 /* UIColor+Foodie.swift */; };
+		52E0415C1F478E3A00EFC815 /* EmptyTablePlaceholderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52E0415B1F478E3A00EFC815 /* EmptyTablePlaceholderView.xib */; };
+		52E041601F4791F900EFC815 /* FavoritesTableViewController+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E0415F1F4791F900EFC815 /* FavoritesTableViewController+CoreData.swift */; };
+		52E041621F47921600EFC815 /* FavoritesTableViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E041611F47921600EFC815 /* FavoritesTableViewController+TableView.swift */; };
 		BC67C407E9F23EA3E060302F /* Pods_Foodie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3970EC10604F2BA32D370D63 /* Pods_Foodie.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,12 +75,17 @@
 		17828FCA5FB77CDD01B60809 /* Pods-FoodieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodieTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodieTests/Pods-FoodieTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3970EC10604F2BA32D370D63 /* Pods_Foodie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Foodie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B932456ABB55DA5E52499AD /* Pods-FoodieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodieTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodieTests/Pods-FoodieTests.release.xcconfig"; sourceTree = "<group>"; };
+		520B529A1F476B13009078AA /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatabaseManager.swift; path = CoreData/DatabaseManager.swift; sourceTree = "<group>"; };
+		520E8E171F473D06007C4DD2 /* BusinessDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BusinessDetail.storyboard; path = Storyboards/BusinessDetail.storyboard; sourceTree = "<group>"; };
+		520E8E181F473D06007C4DD2 /* Favorites.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Favorites.storyboard; path = Storyboards/Favorites.storyboard; sourceTree = "<group>"; };
+		520E8E191F473D06007C4DD2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Storyboards/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		520E8E1A1F473D06007C4DD2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Storyboards/Main.storyboard; sourceTree = "<group>"; };
+		520E8E1B1F473D06007C4DD2 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Search.storyboard; path = Storyboards/Search.storyboard; sourceTree = "<group>"; };
+		520E8E211F473D1F007C4DD2 /* StoryboardProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoryboardProvider.swift; path = Storyboards/StoryboardProvider.swift; sourceTree = "<group>"; };
 		52111FF71F43C23E002A6EAD /* Foodie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foodie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52111FFA1F43C23E002A6EAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52111FFD1F43C23E002A6EAD /* Foodie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Foodie.xcdatamodel; sourceTree = "<group>"; };
-		521120041F43C23E002A6EAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Favorites.storyboard; sourceTree = "<group>"; };
 		521120061F43C23E002A6EAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		521120091F43C23E002A6EAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5211200B1F43C23E002A6EAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		521120101F43C23F002A6EAD /* FoodieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		521120141F43C23F002A6EAD /* FoodieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodieTests.swift; sourceTree = "<group>"; };
@@ -79,25 +96,32 @@
 		521120301F43C6BC002A6EAD /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		521120331F43CD6C002A6EAD /* YelpAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YelpAPI.swift; path = Networking/YelpAPI.swift; sourceTree = "<group>"; };
 		5211203D1F440490002A6EAD /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = Models/Model.swift; sourceTree = "<group>"; };
-		521120411F452482002A6EAD /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		521120461F454613002A6EAD /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesTableViewController.swift; path = Favorites/FavoritesTableViewController.swift; sourceTree = "<group>"; };
 		521120491F454656002A6EAD /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesTableViewCell.swift; path = Favorites/FavoritesTableViewCell.swift; sourceTree = "<group>"; };
-		5211204B1F454C73002A6EAD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5211204F1F454EDF002A6EAD /* YelpOAuth2Handler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YelpOAuth2Handler.swift; path = Networking/YelpOAuth2Handler.swift; sourceTree = "<group>"; };
 		521120501F454EDF002A6EAD /* YelpService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YelpService.swift; path = Networking/YelpService.swift; sourceTree = "<group>"; };
 		521120531F454EEF002A6EAD /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = Search/SearchViewController.swift; sourceTree = "<group>"; };
-		521120571F455A50002A6EAD /* UIColor+Foodie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Foodie.swift"; sourceTree = "<group>"; };
-		521120591F45617A002A6EAD /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		5211205B1F46353A002A6EAD /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Business.swift; path = Models/Business.swift; sourceTree = "<group>"; };
 		5211205D1F4652D9002A6EAD /* BusinessDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusinessDetailViewController.swift; path = BusinessDetail/BusinessDetailViewController.swift; sourceTree = "<group>"; };
 		521120621F466A59002A6EAD /* BusinessSearchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusinessSearchCollectionViewCell.swift; path = Search/BusinessSearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		521120641F466A7B002A6EAD /* SearchViewController+CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SearchViewController+CollectionView.swift"; path = "Search/SearchViewController+CollectionView.swift"; sourceTree = "<group>"; };
 		521120661F466BCA002A6EAD /* SearchViewController+Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SearchViewController+Search.swift"; path = "Search/SearchViewController+Search.swift"; sourceTree = "<group>"; };
-		521120681F46AA57002A6EAD /* BusinessDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BusinessDetail.storyboard; sourceTree = "<group>"; };
 		5211206B1F46B316002A6EAD /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Review.swift; path = Models/Review.swift; sourceTree = "<group>"; };
 		521120711F46CAB9002A6EAD /* BusinessDetailViewController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "BusinessDetailViewController+TableView.swift"; path = "BusinessDetail/BusinessDetailViewController+TableView.swift"; sourceTree = "<group>"; };
 		521120761F46D8FF002A6EAD /* BusinessDetailInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusinessDetailInfoTableViewCell.swift; path = BusinessDetail/BusinessDetailInfoTableViewCell.swift; sourceTree = "<group>"; };
 		521120781F46DE05002A6EAD /* BusinessDetailReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusinessDetailReviewTableViewCell.swift; path = BusinessDetail/BusinessDetailReviewTableViewCell.swift; sourceTree = "<group>"; };
+		525647AA1F47816C002A9DAA /* ManagedFavoriteBusiness+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ManagedFavoriteBusiness+CoreDataClass.swift"; path = "CoreData/ManagedFavoriteBusiness+CoreDataClass.swift"; sourceTree = "<group>"; };
+		525647AB1F47816C002A9DAA /* ManagedFavoriteBusiness+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ManagedFavoriteBusiness+CoreDataProperties.swift"; path = "CoreData/ManagedFavoriteBusiness+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		525647AC1F47816C002A9DAA /* ManagedCoordinates+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ManagedCoordinates+CoreDataClass.swift"; path = "CoreData/ManagedCoordinates+CoreDataClass.swift"; sourceTree = "<group>"; };
+		525647AD1F47816C002A9DAA /* ManagedCoordinates+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ManagedCoordinates+CoreDataProperties.swift"; path = "CoreData/ManagedCoordinates+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		525647AE1F47816C002A9DAA /* ManagedLocation+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ManagedLocation+CoreDataClass.swift"; path = "CoreData/ManagedLocation+CoreDataClass.swift"; sourceTree = "<group>"; };
+		525647AF1F47816C002A9DAA /* ManagedLocation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ManagedLocation+CoreDataProperties.swift"; path = "CoreData/ManagedLocation+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		52E041521F478DDB00EFC815 /* EmptyTablePlaceholderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptyTablePlaceholderView.swift; path = Common/EmptyTablePlaceholderView.swift; sourceTree = "<group>"; };
+		52E041551F478E0F00EFC815 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Extension.swift"; path = "Common/UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		52E041561F478E0F00EFC815 /* UIColor+Foodie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Foodie.swift"; path = "Common/UIColor+Foodie.swift"; sourceTree = "<group>"; };
+		52E0415B1F478E3A00EFC815 /* EmptyTablePlaceholderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EmptyTablePlaceholderView.xib; path = Common/EmptyTablePlaceholderView.xib; sourceTree = "<group>"; };
+		52E0415F1F4791F900EFC815 /* FavoritesTableViewController+CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "FavoritesTableViewController+CoreData.swift"; path = "Favorites/FavoritesTableViewController+CoreData.swift"; sourceTree = "<group>"; };
+		52E041611F47921600EFC815 /* FavoritesTableViewController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "FavoritesTableViewController+TableView.swift"; path = "Favorites/FavoritesTableViewController+TableView.swift"; sourceTree = "<group>"; };
 		73C3E994312780FC9657F4A1 /* Pods-Foodie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Foodie/Pods-Foodie.debug.xcconfig"; sourceTree = "<group>"; };
 		79B04F9159163639CA89642A /* Pods-FoodieUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodieUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodieUITests/Pods-FoodieUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C16453669E68C4F95243DA47 /* Pods-FoodieUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodieUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodieUITests/Pods-FoodieUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -143,6 +167,34 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		520B52991F476AF2009078AA /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				525647AA1F47816C002A9DAA /* ManagedFavoriteBusiness+CoreDataClass.swift */,
+				525647AB1F47816C002A9DAA /* ManagedFavoriteBusiness+CoreDataProperties.swift */,
+				525647AC1F47816C002A9DAA /* ManagedCoordinates+CoreDataClass.swift */,
+				525647AD1F47816C002A9DAA /* ManagedCoordinates+CoreDataProperties.swift */,
+				525647AE1F47816C002A9DAA /* ManagedLocation+CoreDataClass.swift */,
+				525647AF1F47816C002A9DAA /* ManagedLocation+CoreDataProperties.swift */,
+				52111FFC1F43C23E002A6EAD /* Foodie.xcdatamodeld */,
+				520B529A1F476B13009078AA /* DatabaseManager.swift */,
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
+		520E8E161F473CB0007C4DD2 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				520E8E171F473D06007C4DD2 /* BusinessDetail.storyboard */,
+				520E8E181F473D06007C4DD2 /* Favorites.storyboard */,
+				520E8E191F473D06007C4DD2 /* LaunchScreen.storyboard */,
+				520E8E1A1F473D06007C4DD2 /* Main.storyboard */,
+				520E8E1B1F473D06007C4DD2 /* Search.storyboard */,
+				520E8E211F473D1F007C4DD2 /* StoryboardProvider.swift */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
 		52111FEE1F43C23E002A6EAD = {
 			isa = PBXGroup;
 			children = (
@@ -173,17 +225,13 @@
 				5211205F1F4652E0002A6EAD /* BusinessDetail */,
 				5211204D1F454E83002A6EAD /* Search */,
 				5211203C1F440474002A6EAD /* Models */,
+				520B52991F476AF2009078AA /* Core Data */,
 				521120321F43CD40002A6EAD /* Networking */,
+				520E8E161F473CB0007C4DD2 /* Storyboards */,
 				52111FFA1F43C23E002A6EAD /* AppDelegate.swift */,
-				521120031F43C23E002A6EAD /* Favorites.storyboard */,
-				521120411F452482002A6EAD /* Search.storyboard */,
 				521120061F43C23E002A6EAD /* Assets.xcassets */,
-				521120081F43C23E002A6EAD /* LaunchScreen.storyboard */,
 				5211200B1F43C23E002A6EAD /* Info.plist */,
-				52111FFC1F43C23E002A6EAD /* Foodie.xcdatamodeld */,
 				521120301F43C6BC002A6EAD /* SplitViewController.swift */,
-				5211204B1F454C73002A6EAD /* Main.storyboard */,
-				521120681F46AA57002A6EAD /* BusinessDetail.storyboard */,
 			);
 			path = Foodie;
 			sourceTree = "<group>";
@@ -237,6 +285,8 @@
 		521120481F454639002A6EAD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				52E041611F47921600EFC815 /* FavoritesTableViewController+TableView.swift */,
+				52E0415F1F4791F900EFC815 /* FavoritesTableViewController+CoreData.swift */,
 				521120461F454613002A6EAD /* FavoritesTableViewController.swift */,
 				521120491F454656002A6EAD /* FavoritesTableViewCell.swift */,
 			);
@@ -266,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				521120561F455A33002A6EAD /* Extensions */,
+				52E041541F478DDE00EFC815 /* Views */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -273,8 +324,8 @@
 		521120561F455A33002A6EAD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				521120571F455A50002A6EAD /* UIColor+Foodie.swift */,
-				521120591F45617A002A6EAD /* UIViewController+Extension.swift */,
+				52E041551F478E0F00EFC815 /* UIViewController+Extension.swift */,
+				52E041561F478E0F00EFC815 /* UIColor+Foodie.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -294,6 +345,15 @@
 				5211205D1F4652D9002A6EAD /* BusinessDetailViewController.swift */,
 				521120761F46D8FF002A6EAD /* BusinessDetailInfoTableViewCell.swift */,
 				521120781F46DE05002A6EAD /* BusinessDetailReviewTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		52E041541F478DDE00EFC815 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				52E0415B1F478E3A00EFC815 /* EmptyTablePlaceholderView.xib */,
+				52E041521F478DDB00EFC815 /* EmptyTablePlaceholderView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -430,12 +490,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5211200A1F43C23E002A6EAD /* LaunchScreen.storyboard in Resources */,
-				5211204C1F454C73002A6EAD /* Main.storyboard in Resources */,
-				521120421F452482002A6EAD /* Search.storyboard in Resources */,
 				521120071F43C23E002A6EAD /* Assets.xcassets in Resources */,
-				521120051F43C23E002A6EAD /* Favorites.storyboard in Resources */,
-				521120691F46AA57002A6EAD /* BusinessDetail.storyboard in Resources */,
+				520E8E1F1F473D06007C4DD2 /* Main.storyboard in Resources */,
+				520E8E1E1F473D06007C4DD2 /* LaunchScreen.storyboard in Resources */,
+				52E0415C1F478E3A00EFC815 /* EmptyTablePlaceholderView.xib in Resources */,
+				520E8E1C1F473D06007C4DD2 /* BusinessDetail.storyboard in Resources */,
+				520E8E201F473D06007C4DD2 /* Search.storyboard in Resources */,
+				520E8E1D1F473D06007C4DD2 /* Favorites.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,23 +662,34 @@
 				521120771F46D8FF002A6EAD /* BusinessDetailInfoTableViewCell.swift in Sources */,
 				5211205C1F46353A002A6EAD /* Business.swift in Sources */,
 				521120541F454EEF002A6EAD /* SearchViewController.swift in Sources */,
+				525647B01F47816C002A9DAA /* ManagedFavoriteBusiness+CoreDataClass.swift in Sources */,
 				5211203E1F440490002A6EAD /* Model.swift in Sources */,
 				521120671F466BCA002A6EAD /* SearchViewController+Search.swift in Sources */,
+				525647B11F47816C002A9DAA /* ManagedFavoriteBusiness+CoreDataProperties.swift in Sources */,
+				520B529B1F476B13009078AA /* DatabaseManager.swift in Sources */,
 				521120341F43CD6C002A6EAD /* YelpAPI.swift in Sources */,
 				521120311F43C6BC002A6EAD /* SplitViewController.swift in Sources */,
+				52E041531F478DDB00EFC815 /* EmptyTablePlaceholderView.swift in Sources */,
 				5211205E1F4652D9002A6EAD /* BusinessDetailViewController.swift in Sources */,
-				521120581F455A50002A6EAD /* UIColor+Foodie.swift in Sources */,
+				525647B21F47816C002A9DAA /* ManagedCoordinates+CoreDataClass.swift in Sources */,
+				52E041601F4791F900EFC815 /* FavoritesTableViewController+CoreData.swift in Sources */,
+				525647B41F47816C002A9DAA /* ManagedLocation+CoreDataClass.swift in Sources */,
+				52E041621F47921600EFC815 /* FavoritesTableViewController+TableView.swift in Sources */,
+				525647B31F47816C002A9DAA /* ManagedCoordinates+CoreDataProperties.swift in Sources */,
 				52111FFB1F43C23E002A6EAD /* AppDelegate.swift in Sources */,
 				5211204A1F454656002A6EAD /* FavoritesTableViewCell.swift in Sources */,
+				52E041571F478E0F00EFC815 /* UIViewController+Extension.swift in Sources */,
+				525647B51F47816C002A9DAA /* ManagedLocation+CoreDataProperties.swift in Sources */,
 				52111FFE1F43C23E002A6EAD /* Foodie.xcdatamodeld in Sources */,
 				5211206C1F46B316002A6EAD /* Review.swift in Sources */,
 				521120631F466A59002A6EAD /* BusinessSearchCollectionViewCell.swift in Sources */,
 				521120651F466A7B002A6EAD /* SearchViewController+CollectionView.swift in Sources */,
+				520E8E221F473D1F007C4DD2 /* StoryboardProvider.swift in Sources */,
 				521120511F454EDF002A6EAD /* YelpOAuth2Handler.swift in Sources */,
 				521120721F46CAB9002A6EAD /* BusinessDetailViewController+TableView.swift in Sources */,
 				521120791F46DE05002A6EAD /* BusinessDetailReviewTableViewCell.swift in Sources */,
+				52E041581F478E0F00EFC815 /* UIColor+Foodie.swift in Sources */,
 				521120471F454613002A6EAD /* FavoritesTableViewController.swift in Sources */,
-				5211205A1F45617A002A6EAD /* UIViewController+Extension.swift in Sources */,
 				521120521F454EDF002A6EAD /* YelpService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -652,25 +724,6 @@
 			targetProxy = 5211201C1F43C23F002A6EAD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		521120031F43C23E002A6EAD /* Favorites.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				521120041F43C23E002A6EAD /* Base */,
-			);
-			name = Favorites.storyboard;
-			sourceTree = "<group>";
-		};
-		521120081F43C23E002A6EAD /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				521120091F43C23E002A6EAD /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		521120221F43C23F002A6EAD /* Debug */ = {

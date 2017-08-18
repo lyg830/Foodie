@@ -25,9 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBarAppearnce.shadowImage = UIImage()
 
         let splitView = SplitViewController()
-        let favView = UIStoryboard.init(name: "Favorites", bundle: Bundle.main).instantiateViewController(withIdentifier: "FavoritesTableViewController")
-        let searchView = UIStoryboard.init(name: "Search", bundle: Bundle.main).instantiateViewController(withIdentifier: "SearchViewController")
-        splitView.viewControllers = [UINavigationController(rootViewController: favView), UINavigationController(rootViewController: searchView)]
+        let favView = StoryboardProvider.viewController(from: "Favorites", classType: FavoritesTableViewController.self)
+        
+        splitView.viewControllers = [UINavigationController(rootViewController: favView)]
         
         let frame = UIScreen.main.bounds
         window = UIWindow(frame: frame)
