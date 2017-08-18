@@ -89,7 +89,7 @@ extension YelpOAuth2Handler: RequestRetrier {
             "client_id": clientId
         ]
         
-        sessionManager.request(urlString, method: .post, parameters: parameters, encoding: JSONEncoding.default)
+        sessionManager.request(urlString, method: .post, parameters: parameters)
             .responseJSON { [weak self] response in
                 guard let strongSelf = self else { return }
                 

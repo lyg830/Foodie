@@ -38,7 +38,7 @@ extension SplitViewController: UISplitViewControllerDelegate {
         guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
         
         if let topAsSearchViewController = secondaryAsNavController.topViewController as? SearchViewController,
-            topAsSearchViewController.businesses.count > 0 {
+            topAsSearchViewController.businesses.count == 0 {
             return true
         } else if let topAsDetailViewController = secondaryAsNavController.topViewController as? BusinessDetailViewController {
             return false

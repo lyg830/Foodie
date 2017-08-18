@@ -13,6 +13,7 @@ import Alamofire
 import SwiftyJSON
 
 typealias ResponseConverter = (MoyaResult, (JSON?, MoyaError?) -> Void) -> ()
+typealias Parser<T: Model> = (JSON) -> T?
 
 class YelpService {
     
@@ -47,8 +48,8 @@ class YelpService {
         }
     }
     
-    func searchBusinesses(term: String?, location: String = "Toronto", completion: @escaping ([Business]?, MoyaError?) -> Void) {
-        provider.request(.search(term, location, 10)) { (result) in
+    func searchBusinesses(term: String?, location: String, completion: @escaping ([Business]?, MoyaError?) -> Void) {
+        self.provider.request(.search(term, location, 10)) { (result) in
             self.responseConverter(result, { (json, error) in
                 guard let businesses = json?["businesses"].array,
                 error == nil else {
@@ -56,14 +57,30 @@ class YelpService {
                     return
                 }
                 
-                let closure: (JSON) -> Business? = { json in
+                let parser: Parser<Business> = { json in
                     return Business.fromJSON(json)
                 }
                 
-                completion(businesses.flatMap(closure), nil)
+                completion(businesses.flatMap(parser), nil)
             })
         }
     }
     
-    
+    func getReviews(businessId: String, completion: @escaping ([Review]?, MoyaError?) -> Void) {
+        self.provider.request(.reviews(businessId)) { (result) in
+            self.responseConverter(result, { (json, error) in
+                guard let reviews = json?["reviews"].array,
+                    error == nil else {
+                        completion(nil, error)
+                        return
+                }
+                
+                let parser: Parser<Review> = { json in
+                    return Review.fromJSON(json)
+                }
+                
+                completion(reviews.flatMap(parser), nil)
+            })
+        }
+    }
 }

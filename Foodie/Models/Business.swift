@@ -31,13 +31,15 @@ struct Business: Model {
     let coordinates: Coordinates?
     let imageUrl: String?
     let location: Location?
+    let id: String?
     
-    init(rating: Float?, name: String?, coordinates: Coordinates?, imageUrl: String?, location: Location?) {
+    init(rating: Float?, name: String?, coordinates: Coordinates?, imageUrl: String?, location: Location?, id: String?) {
         self.rating = rating
         self.name = name
         self.coordinates = coordinates
         self.imageUrl = imageUrl
         self.location = location
+        self.id = id
     }
     
     static func fromJSON(_ json: JSON) -> Business? {
@@ -66,8 +68,9 @@ struct Business: Model {
         let rating = json["rating"].float
         let name = json["name"].string
         let imageUrl = json["image_url"].string
+        let id = json["id"].string
  
         
-        return Business(rating: rating, name: name, coordinates: coordinates, imageUrl: imageUrl, location: location)
+        return Business(rating: rating, name: name, coordinates: coordinates, imageUrl: imageUrl, location: location, id: id)
     }
 }

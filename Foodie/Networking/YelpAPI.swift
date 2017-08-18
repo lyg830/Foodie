@@ -15,6 +15,7 @@ let baseYelpUrlString = "https://api.yelp.com"
 
 public enum YelpTarget {
     case search(String?, String, Int)
+    case reviews(String)
 }
 
 extension YelpTarget: TargetType {
@@ -22,10 +23,10 @@ extension YelpTarget: TargetType {
     
     public var path: String {
         switch self {
-        case let .search(term?, location, limit):
-            return "/v3/businesses/search?term=\(term.urlEscaped)&location=\(location.urlEscaped)&limit=\(limit)"
-        case let .search(_, location, limit):
-            return "/v3/businesses/search?location=\(location.urlEscaped)&limit=\(limit)"
+        case .search(_, _, _):
+            return "/v3/businesses/search"
+        case let .reviews(id):
+            return "/v3/businesses/\(id.urlEscaped)/reviews"
         }
     }
     
@@ -33,11 +34,17 @@ extension YelpTarget: TargetType {
         switch self {
         case .search:
             return .get
+        case .reviews(_):
+            return .get
         }
     }
     
     public var parameters: [String: Any]? {
         switch self {
+        case let .search(term?, location, limit):
+            return ["term": term.urlEscaped, "location": location.urlEscaped, "limit": limit]
+        case let .search(_, location, limit):
+            return ["location": location.urlEscaped, "limit": limit]
         default:
             return nil
         }
@@ -61,7 +68,7 @@ extension YelpTarget: TargetType {
     public var sampleData: Data {
         switch self {
         default:
-            return "{\"copyright\": \"C\\u00e9sar Blanco\\nGonz\\u00e1lez\",\"date\": \"2017-07-20\",\"explanation\": \"Stunning emission nebula IC 1396 mixes glowing cosmic gas and dark dust clouds in the high and far off constellation of Cepheus. Energized by the bright central star seen here, this star forming region sprawls across hundreds of light-years, spanning over three degrees on the sky while nearly 3,000 light-years from planet Earth. Among the intriguing dark shapes within IC 1396, the winding Elephant's Trunk nebula lies just below center. Stars could still be forming inside the dark shapes by gravitational collapse. But as the denser clouds are eroded away by powerful stellar winds and radiation, any forming stars will ultimately be cutoff from the reservoir of star stuff.  The gorgeous color view is a composition of image data from narrowband filters, mapping emission from the nebula's atomic oxygen, hydrogen, and sulfur into blue, green, and red hues.\",\"hdurl\": \"https://apod.nasa.gov/apod/image/1707/MOSAIC_IC1396_HaSHO_blanco.jpg\\\",\"media_type\": \"image\",\"service_version\": \"v1\",\"title\": \"IC 1396: Emission Nebula in Cepheus\",\"url\": \"https://apod.nasa.gov/apod/image/1707/MOSAIC_IC1396_HaSHO_blanco1024.jpg\"}".data(using: String.Encoding.utf8)!
+            return "dummy".data(using: String.Encoding.utf8)!
         }
     }
 }
