@@ -44,7 +44,7 @@
                                     <constraint firstAttribute="trailing" secondItem="I5D-Cn-zAd" secondAttribute="trailing" id="dfR-AP-4q7"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LSc-IZ-BgO">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LSc-IZ-BgO">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="15" id="miN-oN-hW7">
@@ -58,7 +58,7 @@
                                         <rect key="frame" x="15" y="15" width="165" height="214.5"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="165" height="214.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="165" height="215"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yjD-3z-6qF">
@@ -139,9 +139,9 @@
                                 <exclude reference="hmX-IE-6Qz"/>
                                 <exclude reference="irC-fm-7vX"/>
                                 <exclude reference="pAL-SG-umT"/>
-                                <exclude reference="u0W-aC-CTK"/>
                                 <exclude reference="ZjX-cE-epH"/>
                                 <exclude reference="dEW-MR-6y7"/>
+                                <exclude reference="u0W-aC-CTK"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -151,8 +151,8 @@
                             <mask key="constraints">
                                 <include reference="W9U-zB-nB4"/>
                                 <include reference="pAL-SG-umT"/>
-                                <include reference="u0W-aC-CTK"/>
                                 <include reference="ZjX-cE-epH"/>
+                                <include reference="u0W-aC-CTK"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=regular">

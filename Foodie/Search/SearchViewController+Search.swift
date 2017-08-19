@@ -19,9 +19,15 @@ extension SearchViewController: UISearchBarDelegate {
         }
         
         YelpService.shared.searchBusinesses(term: term, location: location!) { (businesses, error) in
-            if let error = error, case .statusCode(_) = error {
+            if let error = error {
                 print("error: \(error.errorDescription)")
-                self.showAlertController("Error", message: (error as? CustomStringConvertible)?.description ?? "Unable to finish the search.")
+                
+                switch error {
+                case .underlying(let err):
+                    self.showAlertController("Error", message: (err.localizedDescription))
+                default:
+                    self.showAlertController("Error", message: (error.localizedDescription))
+                }
             }
             
             guard let businesses = businesses else {
