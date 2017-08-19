@@ -105,19 +105,20 @@ extension BusinessDetailViewController: UITableViewDelegate {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print(scrollView.contentOffset.y)
+        print("tableview content offset: \(scrollView.contentOffset.y)           topImgViewHeight: \(self.topImgViewHeight)")
         
         if scrollView.contentOffset.y <= -self.topImgViewHeight {
             let offset = -(scrollView.contentOffset.y + self.topImgViewHeight)
             let scale = (offset/self.topImgViewHeight) + 1
+            print("offset: \(offset)   scale: \(scale)")
             let translation = CGAffineTransform(translationX: 0, y: offset/2)
             self.imgView.transform = translation.scaledBy(x: scale, y: scale)
             self.imgView.alpha = 1
         } else {
             let offset = -scrollView.contentOffset.y
         
-            let translationY = (self.topImgViewHeight-offset)/2
-            let alpha = (self.topImgViewHeight - translationY)/self.topImgViewHeight
+            let translationY = (self.topImgViewHeight-offset)
+            let alpha = (self.topImgViewHeight - translationY/2)/self.topImgViewHeight
             
             print("alpha: \(alpha)")
             self.imgView.transform = CGAffineTransform(translationX: 0, y: -translationY)

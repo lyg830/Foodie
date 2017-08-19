@@ -41,8 +41,10 @@ class BusinessDetailViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        topImgViewHeight = self.imgView.frame.height
-        self.tableView.contentInset = UIEdgeInsetsMake(topImgViewHeight, 0, 0, 0)
+        if topImgViewHeight == nil {
+            topImgViewHeight = self.imgView.frame.height
+            self.tableView.contentInset = UIEdgeInsetsMake(topImgViewHeight, 0, 0, 0)
+        }
     }
     
     override func viewDidLoad() {
@@ -77,6 +79,12 @@ class BusinessDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        coordinator.animateAlongsideTransition(in: nil, animation: nil) { (context) in
+            self.topImgViewHeight = self.imgView.frame.height
+            self.tableView.contentInset = UIEdgeInsetsMake(self.topImgViewHeight, 0, 0, 0)
+        }
+    }
 
     /*
     // MARK: - Navigation
