@@ -48,8 +48,8 @@ class YelpService {
         }
     }
     
-    func searchBusinesses(term: String?, location: String, completion: @escaping ([Business]?, MoyaError?) -> Void) {
-        self.provider.request(.search(term, location, 10)) { (result) in
+    func searchBusinesses(term: String?, location: String, categories: [String]? = ["restaurants"], completion: @escaping ([Business]?, MoyaError?) -> Void) {
+        self.provider.request(.search(categories, term, location, 10)) { (result) in
             self.responseConverter(result, { (json, error) in
                 guard let businesses = json?["businesses"].array,
                 error == nil else {
