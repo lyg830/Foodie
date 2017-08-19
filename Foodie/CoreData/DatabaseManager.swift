@@ -90,15 +90,15 @@ class DatabaseManager {
         self.managedObjectContext.delete(object)
     }
     
-    func allFavoritesFetchedResultsController(sortAscending: Bool) -> NSFetchedResultsController<NSFetchRequestResult> {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ManagedFavoriteBusiness")
+    func allFavoritesFetchedResultsController(sortAscending: Bool) -> NSFetchedResultsController<ManagedFavoriteBusiness> {
+        let fetchRequest = NSFetchRequest<ManagedFavoriteBusiness>(entityName: "ManagedFavoriteBusiness")
         let sortDescriptor = NSSortDescriptor(key: "name", ascending: sortAscending)
         fetchRequest.sortDescriptors = [sortDescriptor]
         return NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
     }
     
     func favoriteBusinessExists(with identifier: String) -> Bool {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ManagedFavoriteBusiness")
+        let fetchRequest = NSFetchRequest<ManagedFavoriteBusiness>(entityName: "ManagedFavoriteBusiness")
         fetchRequest.predicate = NSPredicate(format: "id = %@", identifier)
         if let count = try? self.managedObjectContext.count(for: fetchRequest) {
             return count > 0

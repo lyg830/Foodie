@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,17 +14,18 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NRJ-NI-gAr">
-                    <rect key="frame" x="188" y="334" width="0.0" height="0.0"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="sadf sdf sad fasd fads fsdaf sad fasd fdsa fasd fasd sd fsadf sadf sadf asdf asdf sadf asdf asd fasdf asd f" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NRJ-NI-gAr">
+                    <rect key="frame" x="50" y="323.5" width="275" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="NRJ-NI-gAr" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="0Lz-YS-2Av"/>
-                <constraint firstItem="NRJ-NI-gAr" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="UT0-66-n5O"/>
+                <constraint firstAttribute="trailing" secondItem="NRJ-NI-gAr" secondAttribute="trailing" constant="50" id="JZw-gu-OWl"/>
+                <constraint firstItem="NRJ-NI-gAr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="50" id="Xhu-V8-NMo"/>
             </constraints>
             <connections>
                 <outlet property="messageLabel" destination="NRJ-NI-gAr" id="HGG-KX-JvN"/>

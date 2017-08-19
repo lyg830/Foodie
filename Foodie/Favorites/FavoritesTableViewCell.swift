@@ -16,7 +16,11 @@ class FavoritesTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        self.imgView.layer.cornerRadius = 5
+        self.imgView.layer.masksToBounds = true
+        self.imgView.layer.shouldRasterize = true
+        self.imgView.layer.rasterizationScale = UIScreen.main.nativeScale
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

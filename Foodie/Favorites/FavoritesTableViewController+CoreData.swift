@@ -13,6 +13,7 @@ extension FavoritesTableViewController: NSFetchedResultsControllerDelegate {
     
     func fetchAllFavorites(sortAscending: Bool) {
         self.favoritesFetchedResultsController = DatabaseManager.shared.allFavoritesFetchedResultsController(sortAscending: sortAscending)
+        self.favoritesFetchedResultsController?.delegate = self
         do {
             try self.favoritesFetchedResultsController?.performFetch()
             self.tableView.reloadData()
@@ -29,26 +30,30 @@ extension FavoritesTableViewController: NSFetchedResultsControllerDelegate {
     }
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        guard let indexPath = indexPath else {
-            return
-        }
         
         switch type {
         case .insert:
-            self.tableView.insertRows(at: [indexPath], with: .fade)
-            self.updateTableViewBackground()
+            if let indexPath = newIndexPath {
+                self.tableView.insertRows(at: [indexPath], with: .fade)
+                self.updateTableViewBackground()
+            }
         case .delete:
-            self.tableView.deleteRows(at: [indexPath], with: .fade)
-            self.updateTableViewBackground()
+            if let indexPath = indexPath {
+                self.tableView.deleteRows(at: [indexPath], with: .fade)
+                self.updateTableViewBackground()
+            }
         case .update:
-            self.tableView.reloadRows(at: [indexPath], with: .automatic)
+            if let indexPath = indexPath {
+                self.tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
         case .move:
-            guard let newIndexPath = newIndexPath else {
-                return
+            if let indexPath = indexPath {
+                self.tableView.deleteRows(at: [indexPath], with: .fade)
             }
             
-            self.tableView.deleteRows(at: [indexPath], with: .fade)
-            self.tableView.insertRows(at: [newIndexPath], with: .fade)
+            if let newIndexPath = newIndexPath {
+                self.tableView.insertRows(at: [newIndexPath], with: .fade)
+            }
         }
     }
     

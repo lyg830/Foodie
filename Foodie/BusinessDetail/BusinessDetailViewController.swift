@@ -21,6 +21,7 @@ class BusinessDetailViewController: UIViewController {
     var isFavorite: Bool = false
     
     func configureView() {
+        
         if let url = self.business?.imageUrl {
             self.imgView.kf.setImage(with: URL(string: url), options: [KingfisherOptionsInfoItem.cacheMemoryOnly, KingfisherOptionsInfoItem.transition(ImageTransition.fade(0.2))], completionHandler: { (image, error, cacheType, url) in
                 self.image = image

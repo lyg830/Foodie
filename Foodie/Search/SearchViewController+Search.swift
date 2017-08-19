@@ -33,6 +33,7 @@ extension SearchViewController: UISearchBarDelegate {
                 return self.sortBtn.isSelected ? result : !result
             })
             self.collectionView.reloadData()
+            self.updateCollectionViewBackground()
         }
         
         self.searchBar.resignFirstResponder()

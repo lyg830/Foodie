@@ -15,12 +15,13 @@ class FavoritesTableViewController: UITableViewController {
     
     var sortBtn: UIButton!
     var businesses = [ManagedFavoriteBusiness]()
-    var favoritesFetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
+    var favoritesFetchedResultsController: NSFetchedResultsController<ManagedFavoriteBusiness>?
     
     func configureView() {
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.tableView.allowsMultipleSelectionDuringEditing = false
         
         self.sortBtn = UIButton(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: 25, height: 25)))
         self.sortBtn.setImage(UIImage(named: "sort_ascending")?.withRenderingMode(.alwaysTemplate), for: .selected)
@@ -41,6 +42,11 @@ class FavoritesTableViewController: UITableViewController {
         
         self.configureView()
         self.fetchAllFavorites(sortAscending: self.sortBtn.isSelected)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.clearsSelectionOnViewWillAppear = self.splitViewController!.isCollapsed
+        super.viewWillAppear(animated)
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,7 +71,7 @@ class FavoritesTableViewController: UITableViewController {
             self.tableView.separatorStyle = .singleLine
         } else {
             self.tableView.separatorStyle = .none
-            self.tableView.backgroundView = EmptyTablePlaceholderView.placeHolderView(with: "There are currently no favorites. Please search for a business and then add it to the favorite list.")
+            self.tableView.backgroundView = EmptyTablePlaceholderView.placeHolderView(with: "There are currently no favorites. Please search for a business and add it to the favorite list.")
         }
     }
 }

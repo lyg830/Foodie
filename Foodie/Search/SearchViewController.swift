@@ -82,10 +82,15 @@ class SearchViewController: UIViewController {
             return self.sortBtn.isSelected ? result : !result
         })
         self.collectionView.reloadData()
+        self.updateCollectionViewBackground()
     }
     
-    func showProgress(_ show: Bool) {
-        
+    func updateCollectionViewBackground() {
+        if self.businesses.count > 0 {
+            self.collectionView.backgroundView = nil
+        } else {
+            self.collectionView.backgroundView = EmptyTablePlaceholderView.placeHolderView(with: "No result found")
+        }
     }
 }
 
