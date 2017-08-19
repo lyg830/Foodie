@@ -4,8 +4,9 @@ A basic universal iOS app written in Swift for searching businesses on Yelp usin
 
 ## Requirements
 
-Completed items:
+### Completed items:
 
+Required:
 - [x] Use Swift 3 and adapt to all iPhone size classes.
 - [x] Have a keyword search return 10 restaurants from the Yelp API.
 - [x] The results should be displayed in a “grid” view that includes restaurant name and address 
@@ -14,10 +15,12 @@ Completed items:
 - [x] Details view of each restaurant should include the latest review and a photo as well as the name and address 
 - [x] Make it look visually appealing (follow iOS UI/UX Guidelines)
 
-Completed optional items:
-
+Optional:
 - [x] Design the app to be Universal (iPad + iPhone)
 - [x] Be able to add restaurants as a “Favourite”. Create a Favourites page and persist favourites through app reboots.
+
+### Unfinished items:
+
 - [ ] Include Unit Tests
 - [ ] Feel free to add any other creativity to your project that goes beyond the requirements
 
